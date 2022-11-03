@@ -1,0 +1,13 @@
+-Have the beginning display with a start button
+-when start button is clicked, a timer begins
+    -first question appears
+-when an answer is selected, that answer is saved in local storage
+-when user answers the question, the user is take to the next question
+-user loses 5 seconds when the answer is wrong
+-Once all the questions have been answered, user is taken to the end of Game screen
+-timer stops when quiz is completed
+-user is prompted for their initials
+-data is saved for high scores
+-high scores are accessed from beginning of game
+-info is logged in local storage so it can continue to be viewed
+-reset page and variables for new game
