@@ -57,8 +57,13 @@ var questions = [
 ];
 
 //Global variables
+var userNameEl = document.getElementById("username");
+var initialsEl = document.getElementById("input");
+var saveEl = document.getElementById("save");
+var scoreEl = document.getElementById("scores");
 var timerEl = document.getElementById("timer");
 var resultEl = document.getElementById("results");
+var clearScores = document.getElementById("clearscores-btn");
 var pEl = document.getElementById("intro");
 var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
@@ -70,6 +75,7 @@ var startButton = document.getElementById("start-btn");
 var nextButton = document.getElementById("next-btn");
 var questionContainerEl = document.getElementById("question-container");
 
+var finalScore = 0;
 var questionIndex = 0;
 var secondsLeft = 45;
 
@@ -96,6 +102,7 @@ function showQuestion() {
 function validateAnswer(e) {
   var selectedButton = e.target.textContent;
   if (selectedButton === questions[questionIndex].correct) {
+    finalScore++;
   } else {
     wrongAnswerSub();
   }
@@ -131,13 +138,15 @@ function nextQuestion() {
   }
 }
 
+var timerInterval;
 //timer
 function startTime() {
-  var timerInterval = setInterval(function () {
+  timerInterval = setInterval(function () {
     secondsLeft--;
     timerEl.textContent = "Timer: " + secondsLeft;
     if (secondsLeft <= 0) {
       clearInterval(timerInterval);
+      secondsLeft = 0;
       gameOver();
     }
   }, 1000);
@@ -156,7 +165,39 @@ function wrongAnswerSub() {
 
 //when quiz ends
 function gameOver() {
+  clearInterval(timerInterval);
   alert("GAME-OVER");
   questionContainerEl.classList.add("hide");
   resultEl.classList.remove("hide");
+  clearScores.classList.remove("hide");
+  scoreEl.textContent = finalScore;
 }
+
+//button to save scores
+saveEl.addEventListener("click", function () {
+  var scores = [];
+  var newScore = {
+    initial: initialsEl.value,
+    score: finalScore,
+  };
+
+  //created a local storage to save all scores
+  var prevScores = localStorage.getItem("finalscore");
+  if (prevScores == undefined) {
+  } else {
+    scores = scores.concat(JSON.parse(prevScores));
+  }
+  scores.push(newScore);
+  localStorage.setItem("finalscore", JSON.stringify(scores));
+  for (var i = 0; i < scores.length; i++) {
+    var liEl = document.createElement("li");
+    liEl.textContent = scores[i].initial + scores[i].score;
+    userNameEl.appendChild(liEl);
+  }
+});
+
+//clear local storage
+clearScores.addEventListener("click", function () {
+  localStorage.clear();
+  location.reload();
+});

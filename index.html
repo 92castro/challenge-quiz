@@ -11,7 +11,6 @@
     <!-- the main display -->
     <div class="container">
       <header>
-        <li><button>view high scores</button></li>
         <li id="timer"></li>
       </header>
       <section>
@@ -37,7 +36,13 @@
         <button id="start-btn" class="start-btn btn">Start</button>
       </div>
       <!--where scores will be displayed-->
-      <div id="results" class="hide">Results</div>
+      <div id="results" class="hide">
+        <div>Results</div>
+        <div>Final Scores:<span id="scores"></span></div>
+        <input id="input" type="text" /><button id="save">Save</button>
+        <button id="clearscores-btn" class="hide">Clear Scores</button>
+      </div>
+      <ul id="username"></ul>
     </div>
     <script src="./assets/script.js"></script>
   </body>
