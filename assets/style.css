@@ -12,8 +12,14 @@ li {
   color: whitesmoke;
 }
 
+p {
+  padding-bottom: 20px;
+  color: rgb(217, 190, 149);
+}
+
 section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -22,6 +28,7 @@ h1 {
   font-size: 50px;
   padding: 30px;
   text-decoration: underline;
+  text-align: center;
 }
 
 body {
@@ -41,16 +48,12 @@ body {
   background-color: rgba(110, 104, 104, 0.568);
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 0 10px 2px;
 }
 
 .btn-grid {
   display: grid;
   gap: 10px;
   margin: 20px 0;
-}
-
-.btn {
   background-color: rgba(101, 159, 173, 0.801);
   border-radius: 5px;
   padding: 5px 10px;
@@ -69,4 +72,10 @@ body {
 
 .hide {
   display: none;
+}
+
+#question,
+#results {
+  color: whitesmoke;
+  text-align: center;
 }

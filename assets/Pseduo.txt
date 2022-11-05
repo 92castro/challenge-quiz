@@ -11,3 +11,6 @@
 -high scores are accessed from beginning of game
 -info is logged in local storage so it can continue to be viewed
 -reset page and variables for new game
+
+
+

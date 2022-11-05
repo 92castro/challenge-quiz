@@ -8,26 +8,36 @@
     <title>Challenge Quiz</title>
   </head>
   <body>
+    <!-- the main display -->
     <div class="container">
       <header>
-        <li>view high scores</li>
-        <li>Timer</li>
+        <li><button>view high scores</button></li>
+        <li id="timer"></li>
       </header>
       <section>
         <h1>SpongeBob Quiz</h1>
+        <p id="intro">
+          Test out your SpongeBob knowledge! When you click "Start," you'll
+          activate the timer and you'll have 45 seconds to complete the quiz.
+          Also, for every answer you get wrong, you'll lose 5 seconds of the
+          timer.
+        </p>
       </section>
+      <!--what will be in the quiz box-->
       <div id="question-container" class="hide">
-        <div id="question">Question</div>
+        <div id="question"></div>
         <div id="answer-buttons" class="btn-grid">
-          <button class="btn">answer 1</button>
-          <button class="btn">answer 2</button>
-          <button class="btn">answer 3</button>
-          <button class="btn">answer 4</button>
+          <button id="btn1"></button>
+          <button id="btn2"></button>
+          <button id="btn3"></button>
+          <button id="btn4"></button>
         </div>
       </div>
       <div class="controls">
         <button id="start-btn" class="start-btn btn">Start</button>
       </div>
+      <!--where scores will be displayed-->
+      <div id="results" class="hide">Results</div>
     </div>
     <script src="./assets/script.js"></script>
   </body>
