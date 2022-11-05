@@ -34,4 +34,4 @@ My page developed:
 
 - https://92castro.github.io/challenge-quiz/
 
-![screenshot of my project](/challenge-quiz/assets/quizhw.PNG)
+![screenshot of my project](assets/quizhw.PNG)
