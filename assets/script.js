@@ -191,7 +191,8 @@ saveEl.addEventListener("click", function () {
   localStorage.setItem("finalscore", JSON.stringify(scores));
   for (var i = 0; i < scores.length; i++) {
     var liEl = document.createElement("li");
-    liEl.textContent = scores[i].initial + scores[i].score;
+    liEl.textContent =
+      " || initials: " + scores[i].initial + " " + "score: " + scores[i].score;
     userNameEl.appendChild(liEl);
   }
 });
